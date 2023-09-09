@@ -4,7 +4,7 @@
 
 Simple web app to Get Live Cricket Score updates.
 
-![next-cricket-score](https://github.com/sanwebinfo/next-cricket-score/assets/10300271/00bb789c-572b-426c-bd77-d91c7a42fbec)  
+![Screenshot from 2023-09-09 18-09-44](https://github.com/sanwebinfo/next-cricket-score/assets/10300271/fc4990a5-1983-45f3-bff1-687b22762056)
 
 > This project is for Educational and Learning usage - all data credits go to Cricbuzz.
 
