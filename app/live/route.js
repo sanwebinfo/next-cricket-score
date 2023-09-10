@@ -36,7 +36,7 @@ const dummy_json = {
 
 export async function GET() {
   try {
-    const str = "https://m.cricbuzz.com/live-cricket-scores/78173"
+    const str = "https://m.cricbuzz.com/live-cricket-scores/78180"
     //const live_url = str.replace('www', 'm');
     const response = await fetch(str, {
       headers: {
