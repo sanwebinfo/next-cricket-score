@@ -11,19 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4.1.0
-    - name: Cache node modules
-      uses: actions/cache@v3.3.2
-      with:
-        path: node_modules
-        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: | 
-          ${{ runner.OS }}-build-${{ env.cache-name }}-
-          ${{ runner.OS }}-build-
-          ${{ runner.OS }}-
-    - uses: actions/setup-node@v3.8.1
-      with:
-         node-version: '18.x'
-    - name: use yarn
+    - uses: ./.github/actions/prepare
+    - name: use pnpm to build site
       run: |
-       yarn install
-       yarn build
+       pnpm build

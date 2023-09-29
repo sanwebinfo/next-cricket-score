@@ -57,25 +57,25 @@ http://localhost:3000/match/53350
 ```sh
 git clone https://github.com/sanwebinfo/next-cricket-score
 cd next-cricket-score
-yarn
+pnpm install
 ```
 
 - Test the site
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 - Build the site
 
 ```sh
-yarn build
+pnpm build
 ```
 
 - Test the production Build on Localhost
 
 ```sh
-yarn start
+pnpm start
 ```
 
 ## Contributing 🙌

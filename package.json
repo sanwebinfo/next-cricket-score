@@ -10,7 +10,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
-    "@imbios/next-pwa": "^1.1.1",
+    "@ducanh2912/next-pwa": "^9.7.1",
     "autoprefixer": "10.4.16",
     "cheerio": "^1.0.0-rc.12",
     "eslint": "8.50.0",
