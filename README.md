@@ -35,6 +35,7 @@ http://localhost:3000/score?id=123456
 ## API 🍪
 
 - API for Get Live Score data
+- Update current Live match URL at `match.json`
 
 For more check - `/app/live/route.js`
 

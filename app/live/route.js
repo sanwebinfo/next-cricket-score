@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio"
 import { NextResponse } from "next/server"
+import match from '../../match.json';
 
 const dummy_json = {
   title: "API URL is Missing or Data Not Found",
@@ -36,7 +37,7 @@ const dummy_json = {
 
 export async function GET() {
   try {
-    const str = "https://m.cricbuzz.com/live-cricket-scores/80364"
+    const str = "https://m.cricbuzz.com/live-cricket-scores/" + match.live
     //const live_url = str.replace('www', 'm');
     const response = await fetch(str, {
       headers: {
