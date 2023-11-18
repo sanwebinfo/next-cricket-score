@@ -13,7 +13,7 @@
     "@ducanh2912/next-pwa": "^9.7.2",
     "autoprefixer": "10.4.16",
     "cheerio": "^1.0.0-rc.12",
-    "eslint": "8.53.0",
+    "eslint": "8.54.0",
     "eslint-config-next": "14.0.3",
     "next": "14.0.3",
     "postcss": "8.4.31",
