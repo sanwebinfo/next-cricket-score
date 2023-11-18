@@ -2,13 +2,13 @@
 
 ![build-test](https://github.com/sanwebinfo/next-cricket-score/workflows/build-test/badge.svg)  
 
-Simple web app to Get Live Cricket Score updates.
+Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score updates.
 
 ![Screenshot from 2023-09-09 18-09-44](https://github.com/sanwebinfo/next-cricket-score/assets/10300271/fc4990a5-1983-45f3-bff1-687b22762056)
 
-> This project is for Educational and Learning usage - all data credits go to Cricbuzz.
+> This project is for Educational and Learning usage - all data credits go to `Cricbuzz.com`.
 
-⚛ React + Next JS | 🌩 Vercel  
+⚛ React + Next.js | 🌩 Vercel  
 
 ## Free Deploy
 
@@ -35,7 +35,7 @@ http://localhost:3000/score?id=123456
 ## API 🍪
 
 - API for Get Live Score data
-- Update current Live match URL at `match.json`
+- Update the current Live match URL at `match.json`
 
 For more check - `/app/live/route.js`
 
@@ -52,6 +52,13 @@ http://localhost:3000/match/53350
 ```
 
 ## Installation 📦
+
+- Required node.js LTS version (18 or 20)
+- `pnpm` package manager
+
+```sh
+npm install -g pnpm
+````
 
 - Clone this repo or Download
 
@@ -86,7 +93,7 @@ Your PR's are Welcome
 ## Disclaimer 🗃
 
 - This is not an Offical API from Cricbuzz - it's an Unofficial API
-- This is for Education Purpose only - use at your own risk on Production Site
+- This is for Education Purposes only - use at your own risk on the Production Site
 
 ## LICENSE ☑
 
