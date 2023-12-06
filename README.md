@@ -21,6 +21,7 @@ Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score
 - Power Packed with React and Next Modules
 - Next JS API Router for fetch score data from cricbuzz
 - PWA Support
+- Vercel cache Support
 
 ```sh
 
@@ -50,6 +51,8 @@ For More Check - `/app/match/[slug]/route.js`
 ```sh
 http://localhost:3000/match/53350
 ```
+
+- API was cached to 3 secs you can update the cache validation according to your needs - <https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config>
 
 ## Installation 📦
 

@@ -34,6 +34,9 @@ const dummy_json = {
   commentary: "API URL is Missing or Data Not Found",
 }
 
+export const dynamic = 'force-static'
+export const fetchCache = 'auto'
+
 export async function GET(request, { params }) {
   try {
     const matchid = params.slug
@@ -44,7 +47,7 @@ export async function GET(request, { params }) {
         "User-Agent":
           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
       },
-      next: { revalidate: 5 },
+      next: { revalidate: 3 },
     })
 
     const htmlString = await response.text()
