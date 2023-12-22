@@ -2,7 +2,9 @@
 
 ![build-test](https://github.com/sanwebinfo/next-cricket-score/workflows/build-test/badge.svg)  
 
-Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score updates.
+ ~~Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score updates. ~~  
+
+ Next.js Cricket Score Web APP - Simple PWA Web app and API to Get Live Cricket Score updates.  
 
 **API is not working due to the Cricbuzz Mobile site being Fully Redesigned - The full Site Structure was Changed it's a bit complex to get data - Please Consider using the Python Cricket API Version - <https://github.com/sanwebinfo/python-cricket-score/tree/main/api>**  
 
@@ -21,7 +23,7 @@ Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score
 - React + Next JS
 - Tailwind CSS
 - Power Packed with React and Next Modules
-- Next JS API Router for fetch score data from cricbuzz
+- Next JS API Router for fetch score data from API
 - PWA Support
 - Vercel cache Support
 
