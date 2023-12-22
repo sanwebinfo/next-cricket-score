@@ -2,7 +2,7 @@
 
 ![build-test](https://github.com/sanwebinfo/next-cricket-score/workflows/build-test/badge.svg)  
 
- ~~Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score updates. ~~  
+ ~~Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score updates.~~  
 
  Next.js Cricket Score Web APP - Simple PWA Web app and API to Get Live Cricket Score updates.  
 
