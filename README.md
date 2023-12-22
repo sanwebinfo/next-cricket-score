@@ -4,6 +4,8 @@
 
 Next.js Cricket Score API - Simple PWA Web app and API to Get Live Cricket Score updates.
 
+**API is not working due to the Cricbuzz Mobile site being Fully Redesigned - The full Site Structure was Changed it's a bit complex to get data - Please Consider using the Python Cricket API Version - <https://github.com/sanwebinfo/python-cricket-score/tree/main/api>**  
+
 ![Screenshot from 2023-09-09 18-09-44](https://github.com/sanwebinfo/next-cricket-score/assets/10300271/fc4990a5-1983-45f3-bff1-687b22762056)
 
 > This project is for Educational and Learning usage - all data credits go to `Cricbuzz.com`.
@@ -33,23 +35,30 @@ http://localhost:3000/score?id=123456
 
 ```
 
-## API 🍪
+## proxy API 🍪
 
-- API for Get Live Score data
-- Update the current Live match URL at `match.json`
+- Get API from this repo <https://github.com/sanwebinfo/python-cricket-score/tree/main/api>
+- Deploy it on vercel or **Self-host (recommended)**
+- Update the current Live match ID at `/app/proxy/live/match.json`
 
-For more check - `/app/live/route.js`
+For more check - `/app/proxy/live/route.js`
 
 ```sh
-http://localhost:3000/live
+http://localhost:3000/proxy/live
 ```
 
 - Get Live Score data by match id
 
-For More Check - `/app/match/[slug]/route.js`
+For More Check - `/app/proxy/match/[slug]/route.js`
 
 ```sh
-http://localhost:3000/match/53350
+http://localhost:3000/proxy/match/53350
+```
+
+- Add your Primiary API URL in `.env` File / For production - <https://vercel.com/docs/projects/environment-variables>
+
+```sh
+MATCH_API=https://yourapurl.com/score/live?id=
 ```
 
 - API was cached to 3 secs you can update the cache validation according to your needs - <https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config>

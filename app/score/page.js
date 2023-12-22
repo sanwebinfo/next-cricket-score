@@ -11,6 +11,7 @@ export default function Score() {
   const [score, setScore] = useState("Live Score Data...")
   const [batsman, setBatsman] = useState("Batsman Data...")
   const [batsmanrun, setBatsmanrun] = useState("")
+  const [batsmanballs, setBatsmanballs] = useState("")
   const [bowler, setBowler] = useState("")
   const [bowlerruns, setBowlerruns] = useState("")
   const [bowlerover, setBowlerover] = useState("")
@@ -18,22 +19,23 @@ export default function Score() {
   const [runrate, setRunrate] = useState("Fetching Run rate")
   const [update, setUpdate] = useState("match Update")
   const fetchWord = async () => {
-    const response = await fetch("/match/" + search)
+    const response = await fetch("/proxy/match/" + search)
     const data = await response.json()
-    setTitle(data.title)
-    setScore(data.current)
-    setBatsman(data.batsman)
-    setBatsmanrun(data.batsmanrun)
-    setBowler(data.bowler)
-    setBowlerover(data.bowlerover)
-    setBowlerruns(data.bowlerruns)
-    setBowlerwickets(data.bowlerwickets)
-    setRunrate(data.runrate)
-    setUpdate(data.update)
+    setTitle(data.livescore.title)
+    setScore(data.livescore.current)
+    setBatsman(data.livescore.batsman)
+    setBatsmanrun(data.livescore.batsmanrun)
+    setBatsmanballs(data.livescore.ballsfaced)
+    setBowler(data.livescore.bowler)
+    setBowlerover(data.livescore.bowlerover)
+    setBowlerruns(data.livescore.bowlerruns)
+    setBowlerwickets(data.livescore.bowlerwickets)
+    setRunrate(data.livescore.runrate)
+    setUpdate(data.livescore.update)
   }
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/match/" + search)
+      const response = await fetch("/proxy/match/" + search)
       const data = await response.json()
       if (response.status == 200) {
         console.log("Data Fetched...")
@@ -63,7 +65,7 @@ export default function Score() {
         <br />
         <br /> {"🔴 " + score}
         <br />
-        <br /> {"🏏 " + batsman} {batsmanrun}
+        <br /> {"🏏 " + batsman + ":\t" + batsmanrun + " Runs" + "\t" + batsmanballs + " Balls"}
         <br />
         <br />{" "}
         {"🥎 " +
