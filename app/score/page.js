@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 
 export default function Score() {
@@ -102,6 +102,7 @@ export default function Score() {
         <div className="flex h-screen flex-col justify-center items-center">
           <div className="flex items-center justify-center">
             <form method="GET" className="m-3 flex">
+            <Suspense>
               <input
                 id="id"
                 name="id"
@@ -112,6 +113,7 @@ export default function Score() {
                 maxLength="30"
                 required
               />
+            </Suspense>
               <button className="w-15 px-4 rounded-r-lg bg-purple-400 text-gray-800 font-bold p-4 uppercase border-purple-500 border-t border-b border-r">
                 GET
               </button>
