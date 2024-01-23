@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect, Suspense } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
+import { useState, useEffect } from "react"
 
 export default function Score() {
-  const searchParams = useSearchParams()
+  const pathname = typeof window !== "undefined" ? window.location.search : ""
+  const searchParams = new URLSearchParams(pathname);
   const { push } = useRouter()
   const search = searchParams.get("id") || "123456"
   const [title, setTitle] = useState("Match Name...")
@@ -102,7 +103,6 @@ export default function Score() {
         <div className="flex h-screen flex-col justify-center items-center">
           <div className="flex items-center justify-center">
             <form method="GET" className="m-3 flex">
-            <Suspense>
               <input
                 id="id"
                 name="id"
@@ -113,7 +113,6 @@ export default function Score() {
                 maxLength="30"
                 required
               />
-            </Suspense>
               <button className="w-15 px-4 rounded-r-lg bg-purple-400 text-gray-800 font-bold p-4 uppercase border-purple-500 border-t border-b border-r">
                 GET
               </button>
