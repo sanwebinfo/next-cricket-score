@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ducanh2912/next-pwa':
-    specifier: ^10.2.3
-    version: 10.2.3(next@14.1.0)(webpack@5.88.2)
+    specifier: ^10.2.5
+    version: 10.2.5(next@14.1.0)(webpack@5.88.2)
   autoprefixer:
     specifier: 10.4.17
     version: 10.4.17(postcss@8.4.33)
@@ -1224,8 +1224,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@ducanh2912/next-pwa@10.2.3(next@14.1.0)(webpack@5.88.2):
-    resolution: {integrity: sha512-Bdn7zCRFKhSCyrlqKzjFi7Y3/1F+z3PPHsPOhqsMo9H0cVybaDjlLxr6E9SiTy9K0fx2//8QPuEHGZof/UmVoA==}
+  /@ducanh2912/next-pwa@10.2.5(next@14.1.0)(webpack@5.88.2):
+    resolution: {integrity: sha512-DkF0IUNBjJ2eOQ/lxDuEtT7oIfLIcOE6HthM5ESkZBLq9P05O2PEhaIpOLARPF9RNXlvBBJxX0sJNUeVehMTIw==}
     peerDependencies:
       next: '>=14.0.0'
       webpack: '>=5.9.0'
