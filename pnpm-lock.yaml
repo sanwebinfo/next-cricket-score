@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ducanh2912/next-pwa':
-    specifier: ^10.2.5
-    version: 10.2.5(next@14.1.4)(webpack@5.88.2)
+    specifier: ^10.2.6
+    version: 10.2.6(next@14.1.4)(webpack@5.88.2)
   autoprefixer:
     specifier: 10.4.19
     version: 10.4.19(postcss@8.4.38)
@@ -1224,8 +1224,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@ducanh2912/next-pwa@10.2.5(next@14.1.4)(webpack@5.88.2):
-    resolution: {integrity: sha512-DkF0IUNBjJ2eOQ/lxDuEtT7oIfLIcOE6HthM5ESkZBLq9P05O2PEhaIpOLARPF9RNXlvBBJxX0sJNUeVehMTIw==}
+  /@ducanh2912/next-pwa@10.2.6(next@14.1.4)(webpack@5.88.2):
+    resolution: {integrity: sha512-8V7C8tBHX07sN6YCdV7Wx5msmO/sU0Jcn+xijeXRt0pZsBWuCiqPbJXn9weqXuzrtJ1wYucX9WUVNiOGnAsUAw==}
     peerDependencies:
       next: '>=14.0.0'
       webpack: '>=5.9.0'
@@ -1233,7 +1233,7 @@ packages:
       clean-webpack-plugin: 4.0.0(webpack@5.88.2)
       fast-glob: 3.3.2
       next: 14.1.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)
-      semver: 7.5.4
+      semver: 7.6.0
       terser-webpack-plugin: 5.3.10(webpack@5.88.2)
       webpack: 5.88.2
       workbox-build: 7.0.0
@@ -4263,6 +4263,14 @@ packages:
       lru-cache: 6.0.0
     dev: false
 
+  /semver@7.6.0:
+    resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: false
+
   /serialize-javascript@4.0.0:
     resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
     dependencies:
@@ -4989,6 +4997,7 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0
