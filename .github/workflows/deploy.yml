@@ -23,5 +23,6 @@ jobs:
         cache: pnpm
     - run: pnpm i -g vercel
     - name: Deploy Project Vercel
-      run: rm -rf .vercel
-      run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+      run: |
+       rm -rf .vercel
+       vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
