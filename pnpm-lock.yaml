@@ -30,8 +30,8 @@ dependencies:
     specifier: 18.3.1
     version: 18.3.1(react@18.3.1)
   tailwindcss:
-    specifier: 3.4.12
-    version: 3.4.12
+    specifier: 3.4.13
+    version: 3.4.13
 
 devDependencies:
   prettier:
@@ -1602,14 +1602,14 @@ packages:
     resolution: {integrity: sha512-JNvhIEyxVW6EoMIFIvj93ZOywYFatlpu9deeH6eSx6PE3WHYvHaQtmHmQeNw7aA81bYGBPPQqdtBm6b1SsQMmA==}
     dependencies:
       '@types/eslint': 8.44.3
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.6
     dev: false
 
   /@types/eslint@8.44.3:
     resolution: {integrity: sha512-iM/WfkwAhwmPff3wZuPLYiHX18HI24jU8k1ZSH7P8FHwxTjZ2P6CoX2wnF43oprR+YXJM6UUxATkNvyv/JHd+g==}
     dependencies:
-      '@types/estree': 1.0.5
-      '@types/json-schema': 7.0.13
+      '@types/estree': 1.0.6
+      '@types/json-schema': 7.0.15
     dev: false
 
   /@types/estree@0.0.39:
@@ -4290,7 +4290,7 @@ packages:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/json-schema': 7.0.13
+      '@types/json-schema': 7.0.15
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
     dev: false
@@ -4546,8 +4546,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /tailwindcss@3.4.12:
-    resolution: {integrity: sha512-Htf/gHj2+soPb9UayUNci/Ja3d8pTmu9ONTfh4QY8r3MATTZOzmv6UYWF7ZwikEIC8okpfqmGqrmDehua8mF8w==}
+  /tailwindcss@3.4.13:
+    resolution: {integrity: sha512-KqjHOJKogOUt5Bs752ykCeiwvi0fKVkr5oqsFNt/8px/tA8scFPIlkygsf6jXrfCqGHz7VflA6+yytWuM+XhFw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4854,7 +4854,7 @@ packages:
         optional: true
     dependencies:
       '@types/eslint-scope': 3.7.5
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.6
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
