@@ -12,7 +12,7 @@
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",
     "autoprefixer": "10.4.20",
-    "eslint": "9.17.0",
+    "eslint": "9.18.0",
     "eslint-config-next": "15.1.4",
     "next": "15.1.4",
     "postcss": "8.4.49",
