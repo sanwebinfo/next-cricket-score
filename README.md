@@ -23,9 +23,8 @@
 - React + Next JS
 - Tailwind CSS
 - Power Packed with React and Next Modules
-- Next JS API Router for fetch score data from API
+- Next JS Router for proxy API
 - PWA Support
-- Vercel cache Support
 
 ```sh
 
@@ -62,8 +61,6 @@ http://localhost:3000/proxy/match/53350
 ```sh
 MATCH_API=https://yourapurl.com/score/live?id=
 ```
-
-- API was cached to 3 secs you can update the cache validation according to your needs - <https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config>
 
 ## Installation 📦
 
