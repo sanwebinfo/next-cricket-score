@@ -3,98 +3,101 @@
 import { useState, useEffect } from "react"
 
 export default function Index2() {
-  const [title, setTitle] = useState("Match Name...")
-  const [score, setScore] = useState("Live Score Data...")
-  const [batsman, setBatsman] = useState("Batsman Data...")
-  const [batsmanrun, setBatsmanrun] = useState("")
-  const [batsmanballs, setBatsmanballs] = useState("")
-  const [bowler, setBowler] = useState("")
-  const [bowlerruns, setBowlerruns] = useState("")
-  const [bowlerover, setBowlerover] = useState("")
-  const [bowlerwickets, setBowlerwickets] = useState("")
-  const [runrate, setRunrate] = useState("Fetching Run rate")
-  const [update, setUpdate] = useState("match Update")
-  const fetchWord = async () => {
-    const response = await fetch("/proxy/live")
-    const data = await response.json()
-    setTitle(data.livescore.title)
-    setScore(data.livescore.current)
-    setBatsman(data.livescore.batsman)
-    setBatsmanrun(data.livescore.batsmanrun)
-    setBatsmanballs(data.livescore.ballsfaced)
-    setBowler(data.livescore.bowler)
-    setBowlerover(data.livescore.bowlerover)
-    setBowlerruns(data.livescore.bowlerruns)
-    setBowlerwickets(data.livescore.bowlerwickets)
-    setRunrate(data.livescore.runrate)
-    setUpdate(data.livescore.update)
+  const [matchData, setMatchData] = useState({
+    title: "Match Name...",
+    score: "Live Score Data...",
+    batsman: "Batsman Data...",
+    batsmanRun: "",
+    batsmanBalls: "",
+    bowler: "",
+    bowlerRuns: "",
+    bowlerOver: "",
+    bowlerWickets: "",
+    runRate: "Fetching Run rate...",
+    update: "Match Update",
+  })
+
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
+
+  const fetchMatchData = async () => {
+    setLoading(true)
+    setError("")
+    try {
+      const response = await fetch("/proxy/live")
+      if (!response.ok) throw new Error("Failed to fetch match data")
+
+      const data = await response.json()
+      setMatchData({
+        title: data.livescore.title,
+        score: data.livescore.current,
+        batsman: data.livescore.batsman,
+        batsmanRun: data.livescore.batsmanrun,
+        batsmanBalls: data.livescore.ballsfaced,
+        bowler: data.livescore.bowler,
+        bowlerOver: data.livescore.bowlerover,
+        bowlerRuns: data.livescore.bowlerruns,
+        bowlerWickets: data.livescore.bowlerwickets,
+        runRate: data.livescore.runrate,
+        update: data.livescore.update,
+      })
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
   }
-  let Displayscore
-  if (batsman === "Data Not Found") {
-    Displayscore = (
-      <p className="text-gray-800 dark:text-gray-100 text-sm">
-        {"🏏 " + title}
-        <br /> <br />
-        {"📊 " + update}
-      </p>
-    )
-  } else {
-    Displayscore = (
-      <p className="text-gray-800 dark:text-gray-100 text-sm">
-        {"🏏 " + title}
-        <br />
-        <br /> {"📊 " + update}
-        <br />
-        <br /> {"🔴 " + score}
-        <br />
-        <br /> {"🏏 " + batsman + ":\t" + batsmanrun + " Runs" + "\t" + batsmanballs + " Balls"}
-        <br />
-        <br />{" "}
-        {"🥎 " +
-          bowler +
-          "\t" +
-          bowlerover +
-          " over " +
-          bowlerruns +
-          " Runs and " +
-          bowlerwickets +
-          " wicket"}
-        <br />
-        <br /> {"📉 " + runrate}
-      </p>
-    )
-  }
-  let Displaybutton
-  if (batsman === "Data Not Found") {
-    Displaybutton = ""
-  } else {
-    Displaybutton = (
-      <button
-        className="bg-green-400 text-black font-medium py-2 px-4 rounded-full mt-4 border shadow-md"
-        type="button"
-        onClick={() => fetchWord()}
-      >
-        Refresh ▶
-      </button>
-    )
-  }
+
   useEffect(() => {
-    fetchWord()
+    fetchMatchData()
   }, [])
 
   return (
-    <div className="min-h-screen bg-current dark:bg-current">
-      <div className="container mx-auto px-4">
-        <div className="flex h-screen flex-col justify-center items-center">
-          <div className="dark:bg-pink-200 dark:border-pink-200 bg-pink-200 rounded-2xl border shadow-xl p-10 max-w-lg mt-6">
-            <div className="w-full flex flex-col justify-between dark:bg-gray-800 bg-blue-300 dark:border-gray-700 rounded-lg border border-blue-400 mb-6 py-5 px-4">
-              {Displayscore}
-            </div>
-            <div className="flex items-center justify-center">
-              &nbsp;
-              {Displaybutton}
-            </div>
-          </div>
+    <div className="min-h-screen flex items-center justify-center bg-zinc-700 text-gray-900 px-4">
+      <div className="w-full max-w-md bg-gradient-to-b from-slate-200 to-gray-100 p-5 rounded-lg shadow-lg border border-gray-300">
+        <h2 className="text-xl font-bold text-blue-700 mb-3">{matchData.title}</h2>
+
+        <div className="bg-white p-5 rounded-md shadow-md border border-gray-300">
+          {loading ? (
+            <p className="text-gray-600 text-center animate-pulse text-sm">Fetching match data...</p>
+          ) : error ? (
+            <p className="text-red-500 text-sm text-center">{error}</p>
+          ) : matchData.batsman === "Data Not Found" ? (
+            <p className="text-gray-800 text-sm">
+              🏏 {matchData.title}
+              <br />
+              📊 {matchData.update}
+            </p>
+          ) : (
+            <>
+              <p className="text-sm font-medium text-gray-900 text-center">{matchData.update}</p>
+
+              <div className="mt-4 p-4 bg-gray-50 rounded-md shadow-sm border border-gray-400">
+                <p className="text-lg font-bold text-green-700 text-center">🔴 {matchData.score}</p>
+                <p className="text-sm text-gray-900">
+                  🏏 <span className="font-semibold">{matchData.batsman}</span>:{" "}
+                  <span className="text-green-600 font-semibold">{matchData.batsmanRun} Runs</span> 
+                  (<span className="text-gray-700">{matchData.batsmanBalls} Balls</span>)
+                </p>
+                <p className="text-sm text-gray-900">
+                  🥎 <span className="font-semibold">{matchData.bowler}</span>:{" "}
+                  <span className="text-blue-600 font-semibold">{matchData.bowlerOver} Overs</span>,{" "}
+                  <span className="text-red-600 font-semibold">{matchData.bowlerRuns} Runs</span>,{" "}
+                  <span className="text-purple-600 font-semibold">{matchData.bowlerWickets} Wickets</span>
+                </p>
+                <p className="text-sm text-gray-600">📉 Run Rate: {matchData.runRate}</p>
+              </div>
+
+              <div className="flex justify-center mt-4">
+                <button
+                  className="py-2 px-5 bg-blue-600 text-white text-sm rounded-md shadow-md hover:bg-blue-700 transition"
+                  onClick={fetchMatchData}
+                >
+                  Refresh ▶
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
