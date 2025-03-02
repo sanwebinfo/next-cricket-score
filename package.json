@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",
-    "@tailwindcss/postcss": "^4.0.8",
+    "@tailwindcss/postcss": "^4.0.9",
     "eslint": "9.21.0",
     "eslint-config-next": "15.1.7",
     "next": "15.1.7",
     "postcss": "^8.5.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "tailwindcss": "^4.0.8"
+    "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
     "prettier": "^3.5.2"
