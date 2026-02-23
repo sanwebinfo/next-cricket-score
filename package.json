@@ -12,7 +12,7 @@
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",
     "@tailwindcss/postcss": "^4.2.1",
-    "eslint": "9.39.3",
+    "eslint": "10.0.2",
     "eslint-config-next": "15.5.12",
     "next": "15.5.12",
     "postcss": "^8.5.6",
